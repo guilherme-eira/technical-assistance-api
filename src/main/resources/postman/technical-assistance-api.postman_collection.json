@@ -1,0 +1,968 @@
+{
+	"info": {
+		"_postman_id": "167f13b5-efbb-472b-83f6-21ff75d486cf",
+		"name": "Technical Assistance API",
+		"description": "Collection completa para popular o banco de dados da API de Technical Assistance. Contém endpoints para criar equipments, customers, technicians, services e service orders.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42851883"
+	},
+	"item": [
+		{
+			"name": "Equipment",
+			"item": [
+				{
+					"name": "POST Equipment - Create desktop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"Lenovo\",\r\n  \"model\": \"ThinkCentre M720\",\r\n  \"type\": \"DESKTOP\",\r\n  \"serialNumber\": \"LN123987456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						},
+						"description": "Cria um novo equipamento do tipo DESKTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Equipment - Create laptop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"Dell\",\r\n  \"model\": \"Inspiron 15\",\r\n  \"type\": \"LAPTOP\",\r\n  \"serialNumber\": \"SN123456789\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						},
+						"description": "Cria um novo equipamento do tipo LAPTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Equipment - Create cellphone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"Samsung\",\r\n  \"model\": \"Galaxy S23\",\r\n  \"type\": \"CELLPHONE\",\r\n  \"serialNumber\": \"SMG987654321\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						},
+						"description": "Cria um novo equipamento do tipo CELLPHONE."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Equipment - Create printer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"HP\",\r\n  \"model\": \"LaserJet Pro M404\",\r\n  \"type\": \"PRINTER\",\r\n  \"serialNumber\": \"PT987123654\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						},
+						"description": "Cria um novo equipamento do tipo PRINTER."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Equipment - Create television",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"LG\",\r\n  \"model\": \"OLED55C2\",\r\n  \"type\": \"TELEVISION\",\r\n  \"serialNumber\": \"TVA456123789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						},
+						"description": "Cria um novo equipamento do tipo TELEVISION."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Equipment - Create videogame",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"brand\": \"Sony\",\r\n  \"model\": \"PlayStation 5\",\r\n  \"type\": \"VIDEOGAME\",\r\n  \"serialNumber\": \"VGX159753468\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/equipments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"equipments"
+							]
+						},
+						"description": "Cria um novo equipamento do tipo VIDEOGAME."
+					},
+					"response": []
+				}
+			],
+			"description": "Folder com requests para criar equipamentos (CELLPHONE, DESKTOP, LAPTOP, PRINTER, TELEVISION, VIDEOGAME). Cada request realiza um POST para popular o banco."
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "POST Customer - Create new  individual",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"João Silva\",\r\n  \"phone\": \"11912345678\",\r\n  \"email\": \"joao.silva@email.com\",\r\n  \"document\": \"12345678900\",\r\n  \"type\": \"INDIVIDUAL\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Cria um novo cliente do tipo INDIVIDUAL."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Customer - Create new individual",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Maria Oliveira\",\r\n  \"phone\": \"11987654321\",\r\n  \"email\": \"maria.oliveira@email.com\",\r\n  \"document\": \"98765432100\",\r\n  \"type\": \"INDIVIDUAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Cria um novo cliente do tipo INDIVIDUAL."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Customer - Create new company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tech Solutions Ltda\",\r\n  \"phone\": \"21987654321\",\r\n  \"email\": \"contato@techsolutions.com\",\r\n  \"document\": \"12345678000199\",\r\n  \"type\": \"COMPANY\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Cria um novo cliente do tipo COMPANY."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Customer - Create new company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"InovaTech SA\",\r\n  \"phone\": \"1132123434\",\r\n  \"email\": \"contato@inovatech.com\",\r\n  \"document\": \"00987654000155\",\r\n  \"type\": \"COMPANY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Cria um novo cliente do tipo COMPANY."
+					},
+					"response": []
+				}
+			],
+			"description": "Folder com requests para criar clientes. Contém pessoas físicas (INDIVIDUAL) e jurídicas (COMPANY), utilizados para vincular equipamentos e ordens de serviço."
+		},
+		{
+			"name": "Technician",
+			"item": [
+				{
+					"name": "POST Technician",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Carlos Pereira\",\r\n  \"phone\": \"11998765432\",\r\n  \"email\": \"carlos.pereira@email.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/technicians",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"technicians"
+							]
+						},
+						"description": "Cria um novo técnico."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Technician",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Ana Souza\",\r\n  \"phone\": \"11912345678\",\r\n  \"email\": \"ana.souza@techsupport.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/technicians",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"technicians"
+							]
+						},
+						"description": "Cria um novo técnico."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Technician",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rafael Lima\",\r\n  \"phone\": \"11987654320\",\r\n  \"email\": \"rafael.lima@techsupport.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/technicians",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"technicians"
+							]
+						},
+						"description": "Cria um novo técnico."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Technician",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Beatriz Santos\",\r\n  \"phone\": \"11976543210\",\r\n  \"email\": \"beatriz.santos@email.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/technicians",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"technicians"
+							]
+						},
+						"description": "Cria um novo técnico."
+					},
+					"response": []
+				}
+			],
+			"description": "Folder com requests para criar técnicos que executarão os serviços. Contém informações de nome, telefone e email."
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "POST Service - Create service for cellphone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Troca de tela do celular\",\r\n  \"price\": 250.00,\r\n  \"equipmentType\": \"CELLPHONE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo CELLPHONE."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for cellphone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Troca de bateria do celular\",\r\n  \"price\": 120.00,\r\n  \"equipmentType\": \"CELLPHONE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo CELLPHONE."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for laptop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Formatação de notebook\",\r\n  \"price\": 150.00,\r\n  \"equipmentType\": \"LAPTOP\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo LAPTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for laptop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Atualização de software\",\r\n  \"price\": 200.00,\r\n  \"equipmentType\": \"LAPTOP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo LAPTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for desktop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Limpeza interna do desktop\",\r\n  \"price\": 100.00,\r\n  \"equipmentType\": \"DESKTOP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo DESKTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for desktop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Upgrade de memória RAM\",\r\n  \"price\": 180.00,\r\n  \"equipmentType\": \"DESKTOP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo DESKTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for printer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Troca de toner\",\r\n  \"price\": 90.00,\r\n  \"equipmentType\": \"PRINTER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo PRINTER."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create service for printer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Manutenção preventiva\",\r\n  \"price\": 120.00,\r\n  \"equipmentType\": \"PRINTER\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo PRINTER."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create new service for television",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Troca de painel\",\r\n  \"price\": 350.00,\r\n  \"equipmentType\": \"TELEVISION\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo TELEVISION."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create new service for television",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Ajuste de software\",\r\n  \"price\": 150.00,\r\n  \"equipmentType\": \"TELEVISION\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo TELEVISION."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create new service for videogame",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Limpeza interna do console\",\r\n  \"price\": 80.00,\r\n  \"equipmentType\": \"VIDEOGAME\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo VIDEOGAME."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service - Create new service for videogame",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Substituição de HD/SSD\",\r\n  \"price\": 200.00,\r\n  \"equipmentType\": \"VIDEOGAME\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services"
+							]
+						},
+						"description": "Cria um novo serviço para equipamento do tipo VIDEOGAME."
+					},
+					"response": []
+				}
+			],
+			"description": "Folder com requests para criar serviços oferecidos, separados por tipo de equipamento. Cada serviço possui descrição, preço e tipo de equipamento correspondente."
+		},
+		{
+			"name": "Service Order",
+			"item": [
+				{
+					"name": "POST Service Order - Create service order for cellphone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entryDate\": \"{{entryDate}}\",\r\n  \"estimatedDeliveryDate\": \"{{estimatedDeliveryDate}}\",\r\n  \"defect\": \"Tela quebrada e bateria viciada\",\r\n  \"priority\": 4,\r\n  \"notes\": \"Cliente solicita urgência\",\r\n  \"technicianId\": \"39aead67-eb4a-46a9-8e94-a665e274c307\",\r\n  \"equipmentId\": \"85582d2f-5305-465a-b9b9-07a64adc384b\",\r\n  \"customerId\": \"2bd3147b-e1bb-4a3f-973e-7d4b08e70c0c\",\r\n  \"serviceIdList\": [\r\n    \"02ccb2ff-da0e-44ce-9868-b73536d4bfc2\",\r\n    \"bea648f2-1afb-44f9-b6c3-4affe2cca59f\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service-orders"
+							]
+						},
+						"description": "Cria um nova ordem de serviço vinculada a um equipamento do tipo CELLPHONE."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service Order - Create service order for laptop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entryDate\": \"{{entryDate}}\",\r\n  \"estimatedDeliveryDate\": \"{{estimatedDeliveryDate}}\",\r\n  \"defect\": \"Laptop travando\",\r\n  \"priority\": 2,\r\n  \"technicianId\": \"39aead67-eb4a-46a9-8e94-a665e274c307\",\r\n  \"equipmentId\": \"60188d9c-d4e1-457c-b3c8-df8575611923\",\r\n  \"customerId\": \"2bd3147b-e1bb-4a3f-973e-7d4b08e70c0c\",\r\n  \"serviceIdList\": [\r\n    \"3d806354-7adc-4d87-b679-97aefe7d2ae0\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service-orders"
+							]
+						},
+						"description": "Cria um nova ordem de serviço vinculada a um equipamento do tipo LAPTOP."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service Order - Create service order for television",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entryDate\": \"{{entryDate}}\",\r\n  \"estimatedDeliveryDate\": \"{{estimatedDeliveryDate}}\",\r\n  \"defect\": \"Televisão sem imagem\",\r\n  \"priority\": 3,\r\n  \"notes\": \"Verificar painel e software\",\r\n  \"technicianId\": \"7bfcf17b-c9ff-49b0-848e-36c482e06bb7\",\r\n  \"equipmentId\": \"4a10da7f-b897-4d79-8819-7ce3171a927a\", \r\n  \"customerId\": \"c2160373-a15d-44d8-a2f2-38384d3b087c\",\r\n  \"serviceIdList\": [\r\n    \"29d53064-9755-40ee-be0b-d1233aff5882\",\r\n    \"b50572cd-096b-4d0b-9f37-93974f80a23f\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service-orders;",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service-orders;"
+							]
+						},
+						"description": "Cria um nova ordem de serviço vinculada a um equipamento do tipo TELEVISION."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service Order - Create service order for videogame",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entryDate\": \"{{entryDate}}\",\r\n  \"estimatedDeliveryDate\": \"{{estimatedDeliveryDate}}\",\r\n  \"defect\": \"Console muito barulhento\",\r\n  \"priority\": 3,\r\n  \"notes\": \"Provavelmente devido à sujeira na ventoinha\",\r\n  \"technicianId\": \"39aead67-eb4a-46a9-8e94-a665e274c307\",\r\n  \"equipmentId\": \"73716433-34c7-4acd-9275-3d75049c01ee\",\r\n  \"customerId\": \"2bd3147b-e1bb-4a3f-973e-7d4b08e70c0c\",\r\n  \"serviceIdList\": [\r\n    \"74aca51a-501f-4a22-b196-ad32bab8b7b1\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service-orders;",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service-orders;"
+							]
+						},
+						"description": "Cria um nova ordem de serviço vinculada a um equipamento do tipo VIDEOGAME."
+					},
+					"response": []
+				},
+				{
+					"name": "POST Service Order - Create service order for desktop",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"entryDate\": \"{{entryDate}}\",\r\n  \"estimatedDeliveryDate\": \"{{estimatedDeliveryDate}}\",\r\n  \"defect\": \"Memória insuficiente\",\r\n  \"priority\": 2,\r\n  \"notes\": \"Cliente relatou que o desktop fica lento ao executar múltiplos programas; recomendado upgrade de RAM\",\r\n  \"technicianId\": \"7bfcf17b-c9ff-49b0-848e-36c482e06bb7\",\r\n  \"equipmentId\": \"78c3e9fe-525c-48f2-9e96-a5a898b3de76\",\r\n  \"customerId\": \"c2160373-a15d-44d8-a2f2-38384d3b087c\",\r\n  \"serviceIdList\": [\r\n    \"8e837618-4446-4993-975a-6ea73fd17c6b\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service-orders;",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service-orders;"
+							]
+						},
+						"description": "Cria um nova ordem de serviço vinculada a um equipamento do tipo DESKTOP."
+					},
+					"response": []
+				}
+			],
+			"description": "Folder com requests para criar ordens de serviço. Contém diferentes combinações de equipamentos, clientes, técnicos e serviços, incluindo notas e prioridades.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							"pm.variables.set(\"entryDate\", new Date().toISOString().split('T')[0]);\r",
+							"let est = new Date();\r",
+							"est.setDate(est.getDate() + 5);\r",
+							"pm.variables.set(\"estimatedDeliveryDate\", est.toISOString().split('T')[0]);\r",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

@@ -18,8 +18,8 @@ import org.springframework.context.annotation.Configuration;
                         email = "guilhermeaugustoeira@gmail.com"
                 ),
                 license = @License(
-                        name = "Apache 2.0",
-                        url = "https://www.apache.org/licenses/LICENSE-2.0.html"
+                        name = "MIT License",
+                        url = "https://opensource.org/licenses/MIT"
                 )
         )
 )

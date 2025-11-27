@@ -3,12 +3,12 @@ package com.eira.guilherme.technical_assistance.core.business.impl;
 import com.eira.guilherme.technical_assistance.commom.exception.BusinessException;
 import com.eira.guilherme.technical_assistance.core.business.ServiceOrderBusiness;
 import com.eira.guilherme.technical_assistance.core.domain.ServiceOrder;
-import com.eira.guilherme.technical_assistance.core.domain.ServiceOrderTableVO;
 import com.eira.guilherme.technical_assistance.core.domain.enums.ServiceOrderStatus;
 import com.eira.guilherme.technical_assistance.core.service.EquipmentService;
 import com.eira.guilherme.technical_assistance.core.service.ServiceOrderService;
 import com.eira.guilherme.technical_assistance.core.service.ServiceService;
 import com.eira.guilherme.technical_assistance.core.service.TechnicianService;
+import com.eira.guilherme.technical_assistance.entrypoint.dto.service_order.ServiceOrderTableDTO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,12 +50,12 @@ public class ServiceOrderBusinessImpl implements ServiceOrderBusiness {
     }
 
     @Override
-    public List<ServiceOrderTableVO> getServiceOrdersForTable() {
+    public List<ServiceOrderTableDTO> getServiceOrdersForTable() {
         return service.getServiceOrdersForTable();
     }
 
     @Override
-    public List<ServiceOrderTableVO> getServiceOrdersForTableByCustomerName(String name) {
+    public List<ServiceOrderTableDTO> getServiceOrdersForTableByCustomerName(String name) {
         return service.getServiceOrdersForTableByCustomerName(name);
     }
 

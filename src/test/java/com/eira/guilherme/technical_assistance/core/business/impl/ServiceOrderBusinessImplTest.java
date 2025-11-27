@@ -6,8 +6,7 @@ import com.eira.guilherme.technical_assistance.core.domain.enums.CustomerType;
 import com.eira.guilherme.technical_assistance.core.domain.enums.EquipmentType;
 import com.eira.guilherme.technical_assistance.core.domain.enums.ServiceOrderStatus;
 import com.eira.guilherme.technical_assistance.core.service.*;
-import com.eira.guilherme.technical_assistance.resources.database.entity.EquipmentEntity;
-import com.eira.guilherme.technical_assistance.resources.database.entity.ServiceEntity;
+import com.eira.guilherme.technical_assistance.entrypoint.dto.service_order.ServiceOrderTableDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +17,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.then;
 
 @ExtendWith(MockitoExtension.class)
@@ -92,28 +90,28 @@ class ServiceOrderBusinessImplTest {
 
     @Test
     void shouldReturnServiceOrderTableVo() {
-        var serviceOrderTableVO = createServiceOrderTableVO();
+        var serviceOrderTableDto = createServiceOrderTableDto();
 
-        BDDMockito.given(service.getServiceOrdersForTable()).willReturn(List.of(serviceOrderTableVO));
+        BDDMockito.given(service.getServiceOrdersForTable()).willReturn(List.of(serviceOrderTableDto));
 
-        var serviceOrderList = business.getServiceOrdersForTable();
+        var serviceOrderTableDtoList = business.getServiceOrdersForTable();
 
-        Assertions.assertEquals(1, serviceOrderList.size());
-        Assertions.assertEquals(serviceOrderTableVO.getId(), serviceOrderList.getFirst().getId());
-        Assertions.assertEquals(serviceOrderTableVO.getCustomerName(), serviceOrderList.getFirst().getCustomerName());
+        Assertions.assertEquals(1, serviceOrderTableDtoList.size());
+        Assertions.assertEquals(serviceOrderTableDto, serviceOrderTableDtoList.getFirst());
+        Assertions.assertEquals(serviceOrderTableDto.customerName(), serviceOrderTableDtoList.getFirst().customerName());
     }
 
     @Test
     void shouldReturnServiceOrderTableVoByCustomerName() {
-        var serviceOrderTableVO = createServiceOrderTableVO();
+        var serviceOrderTableDto = createServiceOrderTableDto();
 
-        BDDMockito.given(service.getServiceOrdersForTableByCustomerName(serviceOrderTableVO.getCustomerName())).willReturn(List.of(serviceOrderTableVO));
+        BDDMockito.given(service.getServiceOrdersForTableByCustomerName(serviceOrderTableDto.customerName())).willReturn(List.of(serviceOrderTableDto));
 
-        var serviceOrderList = business.getServiceOrdersForTableByCustomerName(serviceOrderTableVO.getCustomerName());
+        var serviceOrderTableDtoList = business.getServiceOrdersForTableByCustomerName(serviceOrderTableDto.customerName());
 
-        Assertions.assertEquals(1, serviceOrderList.size());
-        Assertions.assertEquals(serviceOrderTableVO.getId(), serviceOrderList.getFirst().getId());
-        Assertions.assertEquals(serviceOrderTableVO.getCustomerName(), serviceOrderList.getFirst().getCustomerName());
+        Assertions.assertEquals(1, serviceOrderTableDtoList.size());
+        Assertions.assertEquals(serviceOrderTableDto.id(), serviceOrderTableDtoList.getFirst().id());
+        Assertions.assertEquals(serviceOrderTableDto.customerName(), serviceOrderTableDtoList.getFirst().customerName());
     }
 
     @Test
@@ -359,8 +357,8 @@ class ServiceOrderBusinessImplTest {
                 "guilherme@email.com");
     }
 
-    private ServiceOrderTableVO createServiceOrderTableVO(){
-        return new ServiceOrderTableVO(
+    private ServiceOrderTableDTO createServiceOrderTableDto(){
+        return new ServiceOrderTableDTO(
                 "5f7afbd9-cfe9-4859-8c45-4cf521547108",
                 "Guilherme",
                 LocalDate.now(),

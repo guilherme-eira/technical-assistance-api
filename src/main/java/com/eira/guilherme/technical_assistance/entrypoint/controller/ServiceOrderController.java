@@ -85,14 +85,12 @@ public class ServiceOrderController {
     @GetMapping("/table-data")
     @Operation(summary = "Lista as ordens de serviço em um formato simplificado")
     public ResponseEntity<List<ServiceOrderTableDTO>> getServiceOrdersForTable(){
-        var serviceOrderList = business.getServiceOrdersForTable();
-        return ResponseEntity.ok().body(serviceOrderList.stream().map(so -> new ServiceOrderTableDTO(so.getId(), so.getCustomerName(), so.getEntryDate(), so.getDefect(), so.getExitDate(), so.getStatus())).toList());
+        return ResponseEntity.ok(business.getServiceOrdersForTable());
     }
 
     @GetMapping("/table-data/customer")
     @Operation(summary = "Busca as ordens de serviço por nome do cliente e retorna em um formato simplificado")
     public ResponseEntity<List<ServiceOrderTableDTO>> getServiceOrderByCustomerName(@RequestParam String name){
-        var serviceOrderList = business.getServiceOrdersForTableByCustomerName(name);
-        return ResponseEntity.ok().body(serviceOrderList.stream().map(so -> new ServiceOrderTableDTO(so.getId(), so.getCustomerName(), so.getEntryDate(), so.getDefect(), so.getExitDate(), so.getStatus())).toList());
+        return ResponseEntity.ok(business.getServiceOrdersForTableByCustomerName(name));
     }
 }

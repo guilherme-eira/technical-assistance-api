@@ -3,10 +3,10 @@ package com.eira.guilherme.technical_assistance.resources.service;
 import com.eira.guilherme.technical_assistance.commom.exception.ResourceNotFoundException;
 import com.eira.guilherme.technical_assistance.commom.mapper.ServiceOrderMapper;
 import com.eira.guilherme.technical_assistance.core.domain.ServiceOrder;
-import com.eira.guilherme.technical_assistance.core.domain.ServiceOrderTableVO;
 import com.eira.guilherme.technical_assistance.core.domain.Technician;
 import com.eira.guilherme.technical_assistance.core.domain.enums.ServiceOrderStatus;
 import com.eira.guilherme.technical_assistance.core.service.ServiceOrderService;
+import com.eira.guilherme.technical_assistance.entrypoint.dto.service_order.ServiceOrderTableDTO;
 import com.eira.guilherme.technical_assistance.resources.database.entity.ServiceEntity;
 import com.eira.guilherme.technical_assistance.resources.database.entity.ServiceOrderEntity;
 import com.eira.guilherme.technical_assistance.resources.database.entity.TechnicianEntity;
@@ -63,12 +63,12 @@ public class ServiceOrderServiceImpl implements ServiceOrderService {
     }
 
     @Override
-    public List<ServiceOrderTableVO> getServiceOrdersForTable() {
+    public List<ServiceOrderTableDTO> getServiceOrdersForTable() {
         return repository.findAllServiceOrdersForTable();
     }
 
     @Override
-    public List<ServiceOrderTableVO> getServiceOrdersForTableByCustomerName(String name) {
+    public List<ServiceOrderTableDTO> getServiceOrdersForTableByCustomerName(String name) {
         return repository.findAllServiceOrdersForTableByCustomerName(name);
     }
 
